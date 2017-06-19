@@ -1,0 +1,7 @@
+CREATE TABLE "android_metadata" ("locale" TEXT DEFAULT 'en_US');
+INSERT INTO "android_metadata" VALUES ('en_US');
+
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (1, 'D3 Teknik Elektronika', 'Teknik Elektronika');
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (2, 'D3 Teknik Telekomunikasi', 'Teknik Elektronika');
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (3, 'D3 Teknik Elektro Industri', 'Teknik Elektronika');
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (4, 'D4 Teknik Elektronika', 'Teknik Elektronika');

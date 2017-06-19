@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewProdi_coordinationLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/viewProdi_fabEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:clickable="true"
+        android:tint="?android:attr/textColorPrimary"
+        app:elevation="6dp"
+        app:fabSize="mini"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right|end"
+        app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="192dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/viewProdi_textViewNama"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="72dp"
+                android:gravity="bottom"
+                android:lines="3"
+                android:maxLines="3"
+                android:text="@string/hint_nama_prodi"
+                android:textAppearance="@android:style/TextAppearance.Material.Headline"
+                android:textColor="?android:attr/textColorPrimaryInverse"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="72dp" />
+
+            <ImageButton
+                android:id="@+id/viewProdi_buttonBack"
+                style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:tint="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                android:layout_marginLeft="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="?selectableItemBackgroundBorderless"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.izzan.pensetudiants.ViewProdiActivity">
+
+            <TextView
+                android:id="@+id/viewProdi_textViewNoTelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_no_telp"
+                android:textColor="?android:attr/textColorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconNoTelp"
+                app:layout_constraintTop_toTopOf="@+id/viewProdi_iconNoTelp"
+                android:layout_marginLeft="72dp"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <ImageView
+                android:id="@+id/viewProdi_iconNoTelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha=".5"
+                app:srcCompat="@drawable/ic_phone_black_24dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/viewProdi_iconDepartemen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/viewProdi_textViewDepartemen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="72dp"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:text="@string/label_departemen"
+                android:textColor="?android:attr/textColorPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconDepartemen"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewProdi_iconDepartemen"
+                app:layout_constraintVertical_bias="0.571" />
+
+            <ImageView
+                android:id="@+id/viewProdi_iconDepartemen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:alpha=".5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_location_city_black_24dp"
+                android:layout_marginStart="16dp" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
