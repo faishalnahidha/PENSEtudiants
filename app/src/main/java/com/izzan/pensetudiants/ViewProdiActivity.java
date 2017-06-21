@@ -100,7 +100,7 @@ public class ViewProdiActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == EDIT_PRODI_REQUEST_CODE && resultCode == RESULT_OK) {
             String namaProdi = data.getStringExtra("NAMA_PRODI_UPDATED");
-            Snackbar.make(coordinatorLayout, namaProdi + " berhasil diupdate.",
+            Snackbar.make(coordinatorLayout, "Data " + namaProdi + " berhasil diupdate.",
                     Snackbar.LENGTH_LONG).show();
 
             mProdi = ProgramStudi.load(ProgramStudi.class, mProdi.getId());

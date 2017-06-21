@@ -63,12 +63,12 @@ public class MahasiswaFragment extends Fragment {
 
                     @Override
                     public void onClick(View view, int position) {
-//                        ProgramStudi mProdi = mProgramStudiList.get(position);
-//
-//                        Intent intent = new Intent(getActivity(), ViewProdiActivity.class);
-//                        intent.putExtra("PRODI_ID", mProdi.getId());
-//
-//                        startActivityForResult(intent, VIEW_PRODI_REQUEST_CODE);
+                        Mahasiswa mMahasiswa = mMahasiswaList.get(position);
+
+                        Intent intent = new Intent(getActivity(), ViewMahasiswaActivity.class);
+                        intent.putExtra("MAHASISWA_ID", mMahasiswa.getId());
+
+                        startActivityForResult(intent, VIEW_MAHASISWA_REQUEST_CODE);
                     }
 
                     @Override
@@ -138,9 +138,9 @@ public class MahasiswaFragment extends Fragment {
             Mahasiswa mMahasiswa = adapter.getItem(position);
             switch (item.getItemId()) {
                 case MenuItemId.EDIT_MAHASISWA:
-//                    Intent intent = new Intent(getActivity(), EditMahasiswaActivity.class);
-//                    intent.putExtra("MAHASISWA_ID_EDIT", mMahasiswa.getId());
-//                    startActivityForResult(intent, EDIT_MAHASISWA_REQUEST_CODE);
+                    Intent intent = new Intent(getActivity(), EditMahasiswaActivity.class);
+                    intent.putExtra("MAHASISWA_ID_EDIT", mMahasiswa.getId());
+                    startActivityForResult(intent, EDIT_MAHASISWA_REQUEST_CODE);
                     break;
                 case MenuItemId.DELETE_MAHASISWA:
                     deleteMahasiswa(mMahasiswa);
@@ -164,17 +164,17 @@ public class MahasiswaFragment extends Fragment {
             reloadData();
         }
 
-//        if (requestCode == EDIT_PRODI_REQUEST_CODE && resultCode == Activity.RESULT_OK){
-//            String namaProdi = data.getStringExtra("NAMA_PRODI_UPDATED");
-//            Snackbar.make(getView(), namaProdi + " berhasil diupdate.",
-//                    Snackbar.LENGTH_LONG).show();
-//
-//            reloadData();
-//        }
-//
-//        if (requestCode == VIEW_PRODI_REQUEST_CODE && resultCode == Activity.RESULT_OK){
-//            reloadData();
-//        }
+        if (requestCode == EDIT_MAHASISWA_REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            String namaMahasiswa = data.getStringExtra("NAMA_MAHASISWA_UPDATED");
+            Snackbar.make(getView(), "Data " + namaMahasiswa + " berhasil diupdate.",
+                    Snackbar.LENGTH_LONG).show();
+
+            reloadData();
+        }
+
+        if (requestCode == VIEW_MAHASISWA_REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            reloadData();
+        }
     }
 
 }

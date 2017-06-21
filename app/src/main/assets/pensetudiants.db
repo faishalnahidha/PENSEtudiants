@@ -1,0 +1,24 @@
+CREATE TABLE android_metadata (locale TEXT DEFAULT 'en_US');
+INSERT INTO android_metadata VALUES ('en_US');
+
+CREATE TABLE mahasiswa(
+	_id INTEGER PRIMARY KEY,
+	nama TEXT NOT NULL,
+	nrp INTEGER NOT NULL,
+	program_studi INTEGER NOT NULL,
+	no_hp TEXT,
+	FOREIGN KEY(program_studi) REFERENCES program_studi(_id)
+);
+
+CREATE TABLE program_studi(
+	_id INTEGER PRIMARY KEY,
+	nama_prodi TEXT NOT NULL,
+	departemen TEXT NOT NULL,
+	no_telp TEXT
+);
+
+
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (1, 'D3 Teknik Elektronika', 'Teknik Elektronika');
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (2, 'D3 Teknik Telekomunikasi', 'Teknik Elektronika');
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (3, 'D3 Teknik Elektro Industri', 'Teknik Elektronika');
+INSERT INTO program_studi (_id, nama_prodi, departemen) VALUES (4, 'D4 Teknik Elektronika', 'Teknik Elektronika');

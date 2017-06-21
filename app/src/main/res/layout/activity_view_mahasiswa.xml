@@ -2,7 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/viewProdi_coordinationLayout"
+    android:id="@+id/viewMahasiswa_coordinationLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,7 +17,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/viewProdi_textViewNama"
+                android:id="@+id/viewMahasiswa_textViewNama"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -28,7 +28,7 @@
                 android:gravity="bottom"
                 android:lines="3"
                 android:maxLines="3"
-                android:text="@string/hint_nama_prodi"
+                android:text="@string/hint_nama_mahasiswa"
                 android:textAppearance="@android:style/TextAppearance.Material.Headline"
                 android:textColor="?android:attr/textColorPrimaryInverse"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -36,18 +36,16 @@
                 app:layout_constraintRight_toRightOf="parent" />
 
             <ImageButton
-                android:id="@+id/viewProdi_buttonBack"
+                android:id="@+id/viewMahasiswa_buttonBack"
                 style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="0dp"
                 android:layout_marginTop="4dp"
-                android:background="?selectableItemBackgroundBorderless"
                 android:tint="@android:color/white"
-                app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
-
+                app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:layout_constraintLeft_toLeftOf="parent" />
         </android.support.constraint.ConstraintLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -59,51 +57,83 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.izzan.pensetudiants.ViewProdiActivity">
+            tools:context="com.izzan.pensetudiants.ViewMahasiswaActivity">
 
             <TextView
-                android:id="@+id/viewProdi_textViewNoTelp"
-                android:layout_width="wrap_content"
+                android:id="@+id/viewMahasiswa_textViewNoHp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginLeft="72dp"
-                android:text="@string/label_no_telp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="72dp"
+                android:text="TextView"
                 android:textColor="@android:color/primary_text_light"
-                app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconNoTelp"
+                app:layout_constraintBottom_toBottomOf="@+id/viewMahasiswa_iconNoHp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/viewProdi_iconNoTelp" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewMahasiswa_iconNoHp"
+                tools:text="@string/label_no_hp" />
 
             <ImageView
-                android:id="@+id/viewProdi_iconNoTelp"
+                android:id="@+id/viewMahasiswa_iconNoHp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:alpha=".5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/viewProdi_iconDepartemen"
+                app:layout_constraintTop_toBottomOf="@+id/viewMahasiswa_iconProdi"
                 app:srcCompat="@drawable/ic_phone_black_24dp" />
 
             <TextView
-                android:id="@+id/viewProdi_textViewDepartemen"
+                android:id="@+id/viewMahasiswa_textViewProdi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:layout_marginLeft="72dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginStart="72dp"
-                android:gravity="center_vertical"
-                android:maxLines="2"
-                android:text="@string/label_departemen"
+                android:text="@string/label_prodi"
                 android:textColor="@android:color/primary_text_light"
-                app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconDepartemen"
+                app:layout_constraintBottom_toBottomOf="@+id/viewMahasiswa_iconProdi"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/viewProdi_iconDepartemen"
-                app:layout_constraintVertical_bias="0.571" />
+                app:layout_constraintTop_toTopOf="@+id/viewMahasiswa_iconProdi" />
 
             <ImageView
-                android:id="@+id/viewProdi_iconDepartemen"
+                android:id="@+id/viewMahasiswa_iconProdi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:alpha=".5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viewMahasiswa_iconNRP"
+                app:srcCompat="@drawable/ic_school_black_24dp" />
+
+            <TextView
+                android:id="@+id/viewMahasiswa_textViewNRP"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="72dp"
+                android:text="TextView"
+                android:textColor="@android:color/primary_text_light"
+                app:layout_constraintBottom_toBottomOf="@+id/viewMahasiswa_iconNRP"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewMahasiswa_iconNRP"
+                tools:text="@string/label_NRP" />
+
+            <ImageView
+                android:id="@+id/viewMahasiswa_iconNRP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -112,21 +142,20 @@
                 android:alpha=".5"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_location_city_black_24dp" />
+                app:srcCompat="@drawable/ic_contacts_black_24dp" />
+
         </android.support.constraint.ConstraintLayout>
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/viewProdi_fabEdit"
+        android:id="@+id/viewMahasiswa_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
         android:clickable="true"
-        android:tint="?android:attr/textColorPrimary"
+        android:src="@drawable/ic_edit_black_24dp"
         app:elevation="6dp"
         app:fabSize="mini"
         app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="bottom|right|end"
-        app:srcCompat="@drawable/ic_edit_black_24dp" />
-
+        app:layout_anchorGravity="bottom|right|end" />
 </android.support.design.widget.CoordinatorLayout>

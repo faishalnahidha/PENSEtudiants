@@ -163,7 +163,7 @@ public class ProdiFragment extends Fragment {
 
         if (requestCode == EDIT_PRODI_REQUEST_CODE && resultCode == Activity.RESULT_OK){
             String namaProdi = data.getStringExtra("NAMA_PRODI_UPDATED");
-            Snackbar.make(getView(), namaProdi + " berhasil diupdate.",
+            Snackbar.make(getView(), "Data " + namaProdi + " berhasil diupdate.",
                     Snackbar.LENGTH_LONG).show();
 
             reloadData();

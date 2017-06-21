@@ -16,10 +16,20 @@
         <meta-data
             android:name="AA_DB_VERSION"
             android:value="1" />
-
         <meta-data
             android:name="AA_MODELS"
             android:value="com.izzan.pensetudiants.models.Mahasiswa, com.izzan.pensetudiants.models.ProgramStudi" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".MainActivity"
@@ -27,8 +37,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -42,6 +50,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EditProdiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ViewMahasiswaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditMahasiswaActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
