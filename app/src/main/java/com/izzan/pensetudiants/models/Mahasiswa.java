@@ -11,7 +11,7 @@ import java.util.List;
  * Created by Aizen on 17 Jun 2017.
  */
 
-@Table(name = "mahasiswa")
+@Table(name = "mahasiswa", id = "_id")
 public class Mahasiswa extends Model{
 
     @Column(name = "nama")
@@ -35,6 +35,13 @@ public class Mahasiswa extends Model{
         this.nama = nama;
         this.nrp = nrp;
         this.programStudi = programStudi;
+        this.noHp = noHp;
+    }
+
+    public Mahasiswa(String nama, int nrp, String noHp) {
+        super();
+        this.nama = nama;
+        this.nrp = nrp;
         this.noHp = noHp;
     }
 
@@ -74,7 +81,7 @@ public class Mahasiswa extends Model{
         // This is how you execute a query
         return new Select()
                 .from(Mahasiswa.class)
-                .orderBy("title ASC")
+                .orderBy("nama ASC")
                 .execute();
     }
 

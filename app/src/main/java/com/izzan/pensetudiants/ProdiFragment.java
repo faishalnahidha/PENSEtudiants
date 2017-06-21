@@ -31,6 +31,7 @@ public class ProdiFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ProdiRecyclerViewAdapter mAdapter;
 
+    public static final int CREATE_PRODI_REQUEST_CODE = 200;
     public static final int VIEW_PRODI_REQUEST_CODE = 201;
     public static final int EDIT_PRODI_REQUEST_CODE = 202;
 
@@ -80,7 +81,7 @@ public class ProdiFragment extends Fragment {
         return view;
     }
 
-    public void reloadData() {
+    private void reloadData() {
         List<ProgramStudi> list = ProgramStudi.getAll();
         mProgramStudiList.clear();
         mProgramStudiList.addAll(list);
@@ -112,7 +113,8 @@ public class ProdiFragment extends Fragment {
         mainActivity.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainActivity.goToCreateProdiActivity();
+                Intent intent = new Intent(getActivity(), CreateProdiActivity.class);
+                startActivityForResult(intent, CREATE_PRODI_REQUEST_CODE);
             }
         });
     }
@@ -131,15 +133,16 @@ public class ProdiFragment extends Fragment {
         if (position != -1) {
             ProgramStudi mProdi = mAdapter.getItem(position);
             switch (item.getItemId()) {
-                case 1:
+                case MenuItemId.EDIT_PRODI:
                     Intent intent = new Intent(getActivity(), EditProdiActivity.class);
                     intent.putExtra("PRODI_ID_EDIT", mProdi.getId());
                     startActivityForResult(intent, EDIT_PRODI_REQUEST_CODE);
                     break;
-                case 2:
+                case MenuItemId.DELETE_PRODI:
                     deleteProdi(mProdi);
                     Snackbar.make(getView(), mProdi.getNamaProdi() + " telah dihapus.",
                             Snackbar.LENGTH_LONG).show();
+                    break;
             }
         }
 
@@ -149,6 +152,14 @@ public class ProdiFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CREATE_PRODI_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            String prodiBaru = data.getStringExtra("PRODI_BARU");
+            Snackbar.make(getView(), prodiBaru + " berhasil ditambahkan.",
+                    Snackbar.LENGTH_LONG).show();
+
+            reloadData();
+        }
 
         if (requestCode == EDIT_PRODI_REQUEST_CODE && resultCode == Activity.RESULT_OK){
             String namaProdi = data.getStringExtra("NAMA_PRODI_UPDATED");

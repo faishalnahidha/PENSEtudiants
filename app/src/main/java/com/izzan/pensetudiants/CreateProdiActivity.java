@@ -28,6 +28,8 @@ public class CreateProdiActivity extends AppCompatActivity {
 
     private CoordinatorLayout coordinatorLayout;
 
+    private String[] arrayDepartement;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,7 @@ public class CreateProdiActivity extends AppCompatActivity {
         /**
          * set autocomplete item for departemen
          */
-        String[] arrayDepartement = getResources().getStringArray(R.array.list_departement);
+        arrayDepartement = getResources().getStringArray(R.array.list_departement);
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_list_item_1, arrayDepartement);
         actvDepartemen.setAdapter(arrayAdapter);
@@ -89,11 +91,12 @@ public class CreateProdiActivity extends AppCompatActivity {
                                 Snackbar.LENGTH_LONG).show();
                     } else {
                         int found = 0;
-                        String[] arrayDepartement = getResources().getStringArray(R.array.list_departement);
+                        //String[] arrayDepartement = getResources().getStringArray(R.array.list_departement);
 
                         for (int i = 0; i < arrayDepartement.length; i++) {
                             if (arrayDepartement[i].equalsIgnoreCase(departemen)) {
                                 found = 1;
+                                break;
                             }
                         }
 

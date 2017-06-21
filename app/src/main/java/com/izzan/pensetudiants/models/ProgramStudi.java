@@ -71,4 +71,11 @@ public class ProgramStudi extends Model{
                 .orderBy("RANDOM()")
                 .executeSingle();
     }
+
+    public static ProgramStudi getByNamaProdi(String namaProdi){
+        return new Select()
+                .from(ProgramStudi.class)
+                .where("nama_prodi = ?", namaProdi)
+                .executeSingle();
+    }
 }

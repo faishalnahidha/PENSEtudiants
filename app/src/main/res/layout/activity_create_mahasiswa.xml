@@ -57,7 +57,7 @@
                 android:hint="@string/hint_nama_mahasiswa"
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName"
-                android:textColor="@android:color/secondary_text_dark"
+                android:textColor="?android:attr/textColorPrimaryInverse"
                 android:textColorHint="@android:color/primary_text_dark"
                 android:textCursorDrawable="@drawable/color_cursor"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -113,7 +113,7 @@
                 android:layout_marginEnd="16dp"
                 android:id="@+id/textInputLayout2">
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/createMahasiswa_editTextProdi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

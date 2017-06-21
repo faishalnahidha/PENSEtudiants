@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void goToCreateMahasiswaActivity(){
-        Intent intent = new Intent(MainActivity.this, CreateMahasiswaActivity.class);
-        startActivityForResult(intent, CREATE_MAHASISWA_REQUEST_CODE);
-    }
 
     public void goToCreateProdiActivity(){
         Intent intent = new Intent(MainActivity.this, CreateProdiActivity.class);
@@ -150,20 +146,5 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CREATE_MAHASISWA_REQUEST_CODE && resultCode == RESULT_OK) {
-
-        }
-
-        if (requestCode == CREATE_PRODI_REQUEST_CODE && resultCode == RESULT_OK) {
-            String prodiBaru = data.getStringExtra("PRODI_BARU");
-            Snackbar.make(coordinatorLayout, prodiBaru + " berhasil ditambahkan.",
-                    Snackbar.LENGTH_LONG).show();
-
-            mProdiFragment.reloadData();
-        }
-
-        if (requestCode == VIEW_PRODI_REQUEST_CODE || requestCode == EDIT_PRODI_REQUEST_CODE){
-            mProdiFragment.reloadData();
-        }
     }
 }

@@ -4,10 +4,10 @@
     <string name="button_simpan">Simpan</string>
     <string name="hint_nama_mahasiswa">Nama mahasiswa...</string>
     <string name="hint_nama_prodi">Nama program studi...</string>
-    <string name="label_NRP">NRP</string>
-    <string name="label_prodi">Program Studi</string>
+    <string name="label_NRP">NRP*</string>
+    <string name="label_prodi">Program Studi*</string>
     <string name="label_no_hp">No. Handphone</string>
-    <string name="label_departemen">Departemen</string>
+    <string name="label_departemen">Departemen*</string>
     <string name="label_no_telp">No. Telepon</string>
 
     <string-array name="list_departement">

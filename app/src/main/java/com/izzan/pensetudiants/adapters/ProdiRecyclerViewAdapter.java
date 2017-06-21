@@ -1,7 +1,6 @@
 package com.izzan.pensetudiants.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -10,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.izzan.pensetudiants.MenuItemId;
 import com.izzan.pensetudiants.R;
-import com.izzan.pensetudiants.ViewProdiActivity;
 import com.izzan.pensetudiants.models.ProgramStudi;
 
 import java.util.List;
@@ -93,8 +92,8 @@ public class ProdiRecyclerViewAdapter extends RecyclerView.Adapter<ProdiRecycler
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             menu.setHeaderTitle(namaProdi.getText().toString());
-            menu.add(Menu.NONE, 1, 1, "Edit");
-            menu.add(Menu.NONE, 2, 2, "Hapus");
+            menu.add(200, MenuItemId.EDIT_PRODI, 1, "Edit");
+            menu.add(200, MenuItemId.DELETE_PRODI, 2, "Hapus");
         }
     }
 }

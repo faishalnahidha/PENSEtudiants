@@ -77,12 +77,12 @@
                 android:id="@+id/viewProdi_textViewNoTelp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_no_telp"
-                android:textColor="?android:attr/textColorPrimary"
-                app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconNoTelp"
-                app:layout_constraintTop_toTopOf="@+id/viewProdi_iconNoTelp"
                 android:layout_marginLeft="72dp"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                android:text="@string/label_no_telp"
+                android:textColor="@android:color/primary_text_light"
+                app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconNoTelp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewProdi_iconNoTelp" />
 
             <ImageView
                 android:id="@+id/viewProdi_iconNoTelp"
@@ -107,7 +107,7 @@
                 android:gravity="center_vertical"
                 android:maxLines="2"
                 android:text="@string/label_departemen"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@android:color/primary_text_light"
                 app:layout_constraintBottom_toBottomOf="@+id/viewProdi_iconDepartemen"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

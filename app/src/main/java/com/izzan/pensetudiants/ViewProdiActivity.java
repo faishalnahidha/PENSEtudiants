@@ -84,7 +84,7 @@ public class ViewProdiActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(mProdi.getNoTelp())) {
             textViewNoTelp.setText(mProdi.getNoTelp());
             textViewNoTelp.setTextColor(ContextCompat.getColor(
-                    getApplicationContext(), android.R.color.secondary_text_light));
+                    getApplicationContext(), android.R.color.primary_text_light));
             textViewNoTelp.setTypeface(null, Typeface.NORMAL);
         } else {
             textViewNoTelp.setText("tidak ada nomor telepon");
